@@ -53,10 +53,10 @@ const resolvers = {
 
        const user = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedBooks: bookId } }
+          { $pull: { savedBooks: {bookId} } }
         );
 
-        return thought;
+        return user;
       }
       throw AuthenticationError;
     },
