@@ -22,7 +22,7 @@ const SearchBooks = () => {
       QUERY_ME,
       'Me'
     ]
-  });
+  })
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);
   // create state for holding our search field data
@@ -82,7 +82,7 @@ const SearchBooks = () => {
     }
 
     try {
-      const {data} = await SaveBook({variables: {
+      await SaveBook({variables: {
          book:
         bookToSave} });
 
